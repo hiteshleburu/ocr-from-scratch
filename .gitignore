@@ -1,0 +1,10 @@
+data/
+checkpoints/
+*.png
+*.jpg
+__pycache__/
+.ipynb_checkpoints/
+venv/
+*.pt
+*.pth
+.DS_Store
