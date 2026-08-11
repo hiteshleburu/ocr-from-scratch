@@ -1,0 +1,2 @@
+run_id,timestamp,labels_path,n_train_images,d_model,n_layers,n_heads,epochs,lr,lr_schedule,batch_size,best_val_loss,word_accuracy,cer,n_params,train_time_sec,checkpoint_path,val_indices_path
+run_20260810_195905,2026-08-10T20:30:55.454550,data/synth/train_v2/labels.txt,45000,256,3,8,30,0.0003,flat,128,0.1348,0.941,0.0207,4732583,1872.5,checkpoints/recognition\run_20260810_195905_best.pt,checkpoints/recognition\run_20260810_195905_val_indices.pt
