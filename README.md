@@ -21,7 +21,7 @@ pip install -r requirements.txt
 | Stage | Status | Description |
 |---|---|---|
 | `recognition` | Done | Reads text from a cropped word image |
-| `detection` | Planned | Locates text regions within a full screenshot |
+| `detection` | In Progress | Locates text regions within a full screenshot |
 | `entities` | Planned | Classifies recognized text as sensitive (name, email, phone, etc.) |
 | `redaction` | Planned | Blurs/masks the identified sensitive regions |
 
