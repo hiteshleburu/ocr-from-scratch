@@ -1,3 +1,3 @@
-run_id,data_dir,n_images,epochs,batch_size,best_val_loss,precision,recall,f1,train_time_sec,checkpoint_path
-run_5k_baseline,data/detection/train,5000,20,16,0.0243,0.9887,0.9723,0.9800,1755.1,checkpoints/detection/detection_baseline.pt
-run_25k_v2,data/detection/train_v2,25000,20,16,0.0147,0.9943,0.9923,0.9932,8881.8,checkpoints/detection/detection_baseline.pt
+run_id,timestamp,image_dir,n_images,base_channels,epochs,batch_size,lr,best_val_loss,precision,recall,f1,n_params,train_time_sec,checkpoint_path,val_indices_path
+run_5k_baseline,-,data/detection/train/images,5000,32,20,16,0.001,0.0243,0.9887,0.9723,0.98,-,1755.1,checkpoints/detection_baseline.pt,-
+run_25k_v2,-,data/detection/train_v2/images,25000,32,20,16,0.001,0.0147,0.9943,0.9923,0.9932,-,8881.8,checkpoints/detection_baseline.pt,-
