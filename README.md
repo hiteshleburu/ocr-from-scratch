@@ -72,7 +72,7 @@ Reads text from a cropped word image. CNN encoder + hand-built transformer decod
 | `model.py` | `CNNEncoder`, `Decoder` (multi-head attention, causal masking, decoder layers), `OCRModel` |
 | `metrics.py` | `word_accuracy` (exact match) and `cer` (character error rate) |
 | `generate.py` | Autoregressive generation loop, with optional n-gram repeat blocking |
-| `train.py` | CLI training script — data loading, training loop, eval, checkpointing, run logging |
+| `train.py` | CLI training script, data loading, training loop, eval, checkpointing, run logging |
 
 ### Architecture
 
@@ -86,7 +86,7 @@ word image [32x128]
 
 ### Usage
 
-**Generate synthetic training data** — see `notebooks/02_data_generation.ipynb`.
+**Generate synthetic training data:** see `notebooks/02_data_generation.ipynb`.
 
 **Train:**
 
@@ -131,8 +131,8 @@ Best checkpoint: 63,000 synthetic images, 60+ fonts, 4-layer decoder, `d_model=3
 | Word accuracy | 94.6% |
 | Character error rate | 1.70% |
 
-Font-diverse training was prioritized over raw benchmark score — a narrower, 6-font,
-50,000-image run reached 96.4% word accuracy / 88.1% on unseen random strings, but the
+Font-diverse training was prioritized over raw benchmark score. A narrower, 6-font,
+50,000-image run reached 96.4% word accuracy and 88.1% on unseen random strings, but the
 broader-font model generalizes noticeably better to real, varied-font text crops from the
 detection pipeline (see `13_pipeline_test.ipynb`).
 
@@ -163,7 +163,7 @@ mask via connected-component analysis.
 | `model.py` | `ConvBlock`, `Encoder`/`Decoder` (skip connections), `DetectionModel` |
 | `dataset.py` | `DetectionDataset`, `DetectionTransform` (aspect-ratio-preserving resize + pad) |
 | `postprocess.py` | `mask_to_boxes` (connected components), `iou`, `evaluate_boxes` (precision/recall/F1) |
-| `train.py` | CLI training script — data loading, training loop, eval, checkpointing, run logging |
+| `train.py` | CLI training script, data loading, training loop, eval, checkpointing, run logging |
 
 ### Architecture
 
@@ -181,7 +181,7 @@ imbalance between text and background pixels.
 
 ### Usage
 
-**Generate synthetic training data** — see `notebooks/08_detection_data_generation.ipynb`.
+**Generate synthetic training data:** see `notebooks/08_detection_data_generation.ipynb`.
 Synthetic screenshots use two randomly chosen layouts (email-style header + paragraph, or
 chat-style message bubbles), with font-proportional spacing and procedurally generated
 background/text contrast.
@@ -229,8 +229,8 @@ Best checkpoint: 25,000 synthetic images, `base_channels=32`, 20 epochs.
 | F1 | 99.32% |
 
 Scaling from an initial 5,000-image run (F1 98.0%) to 25,000 images substantially reduced
-the model's main failure mode — occasionally merging two adjacent words or lines into a
-single bounding box — though it still occurs occasionally under tight word spacing.
+the model's main failure mode: occasionally merging two adjacent words or lines into a
+single bounding box. It still occurs occasionally under tight word spacing.
 
 ### Notebooks
 
